@@ -10,9 +10,9 @@ This includes:
    
 
 An articulation of my data model
-FSR Sensor The sensor will be used to document how long I run for. I will place an object onto the sensor at the beginning my run and take off at the end of my run to document how long I ran for. 
+FSR Sensor The sensor will be used to document how long I run for. I will place an object onto the sensor at the beginning my run and take off at the end of my run to document how long I ran for. The FSR gives values as numbers as decimals, but instead, I'd like to translate that data into period of time (using the amount of the time the object is on the censor). 
 
-Potentiometer Sensor: This sensor will be used to monitor my motivation. Before each run I will turn the knob a lot a little to generate two values (motivated and unmotivated). The potentiometer gives values as numbers, but I will configure it so it translates into strings.
+Potentiometer Sensor: This sensor will be used to monitor my motivation. Before each run I will turn the knob a lot or slightly to generate two values (motivated and unmotivated). The potentiometer gives values as numbers, but I will configure it so it translates into strings. 
 
 Data Model: 
 One table will contain the following values: FSRSENSOR (int), POTENTSENSOR (varchar(20)), sensortime (date/time)
@@ -22,6 +22,7 @@ Calls will be made to photo device every minute and data will be written to an A
 
 Data Aggregation: 
 A visualization of small multiples will be made daily to show the relationship between motivation and running time. 
+
 
 ![alt text](https://github.com/graceiseverywhere/data-structures/blob/master/MSDV_DataStructures_grace_sensors_mockdesign.png
  "Initial Mockup design")
