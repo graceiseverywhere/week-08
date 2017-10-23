@@ -10,7 +10,18 @@ This includes:
    
 
 An articulation of my data model
+FSR Sensor The sensor will be used to document how long I run for. I will place an object onto the sensor at the beginning my run and take off at the end of my run to document how long I ran for. 
 
+Potentiometer Sensor: This sensor will be used to monitor my motivation. Before each run I will turn the knob a lot a little to generate two values (motivated and unmotivated). 
+
+Data Model: 
+One table will contain the following values: FSRSENSOR (int), POTENTSENSOR (varchar(20)), sensortime (date/time)
+
+Data Frequency: 
+Calls will be made to photo device every minute and data will be written to an AWS-hosted SQL database. 
+
+Data Aggregation: 
+A visualization of small multiples will be made daily to show the relationship between motivation and running time. 
 
 ![alt text](https://github.com/graceiseverywhere/data-structures/blob/master/MSDV_DataStructures_grace_sensors_mockdesign.png
  "Initial Mockup design")
@@ -40,6 +51,9 @@ sensors=> INSERT INTO gracesensors VALUES (1, 'motivated', DEFAULT);
 sensors=> INSERT INTO gracesensors VALUES (5, 'unmotivated', DEFAULT);
 sensors=> INSERT INTO gracesensors VALUES (8, 'motivated', DEFAULT);
 sensors=> INSERT INTO gracesensors VALUES (9, 'motivated', DEFAULT);
+![alt text](https://github.com/graceiseverywhere/data-structures/blob/master/Grace_Sensors_Insert.png
+ "Insert Statements")
+
 
 \\\verifying table is there 
 sensors=> \d
@@ -48,6 +62,8 @@ sensors=> \d
 --------+--------------+-------+-------
  public | gracesensors | table | grace
 (1 row)
+
+![alt text](https://github.com/graceiseverywhere/data-structures/blob/master/Grace_Sensors_Verify.png "Verify ScreenGrab")
 
 
 \\\select statement
@@ -59,3 +75,7 @@ sensors=> SELECT * from gracesensors;
          8 | motivated    | 2017-10-23 17:25:01.295956
          9 | motivated    | 2017-10-23 17:25:07.760505
 (4 rows)
+![alt text](https://github.com/graceiseverywhere/data-structures/blob/master/Grace_Sensors_Select.png
+ "Select Statement Used")
+
+
